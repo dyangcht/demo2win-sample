@@ -19,11 +19,7 @@ sleep 30
 
 mvn -q quarkus:add-extension -Dextensions="openshift" -f $CHE_PROJECTS_ROOT/demo2win-sample
 
-<<<<<<< HEAD
 cp /projects/demo2win-sample/scripts/application.properties /projects/demo2win-sample/src/main/resources/
-=======
-cp /projects/quarkus-workshop-m1m2-labs/scripts/application.properties /projects/demo2win-sample/src/main/resources/
->>>>>>> 12f1967628bfb0a7cacc6816efc3b02fc8c87875
 
 mvn clean package -Pnative -DskipTests -f ${CHE_PROJECTS_ROOT}/demo2win-sample
 
