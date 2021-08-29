@@ -47,7 +47,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String lastLetter(@PathParam("name") String name) {
         int len = name.length();
-        String lastLetter = name.substring(len-1);
+        String lastLetter = name.substring(len);
         log.info("Got last letter: " + lastLetter);
         return lastLetter;
     }
