@@ -17,8 +17,29 @@ public class GreetingResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("hello"));
+             .body(is("hello quarkus!"));
     }
 
-    // add more tests
+    // add moretests
+    @Test
+    public void testGreetingEndpoint() {
+        String uuid = UUID.randomUUID().toString();
+        given()
+          .pathParam("name", uuid)
+          .when().get("/hello/greeting/{name}")
+          .then()
+            .statusCode(200)
+            .body(startsWith("你好 " + uuid));
+    }
+
+    @Test
+    public void testEndPoint() {
+        String name = "David";
+        given()
+            .pathParam("name", name)
+            .when().get("/hello/greeting/{name}")
+            .then()
+                .statusCode(200)
+                .body(startsWith("你好 " + name));
+    }
 }
